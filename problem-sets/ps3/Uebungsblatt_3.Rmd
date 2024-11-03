@@ -1,7 +1,7 @@
 
 ```{r 'check_ps', include=FALSE}
 
-user.name = 'ENTER A USER NAME HERE'
+user.name = 'Ilja Sukhanov'
 ```
 
 # RTutor Uebungsblatt 3 - Projektkurs
@@ -51,14 +51,13 @@ library(gganimate)
 library(ggrepel)
 library(skimr)
 library(RColorBrewer)
+library(gifski)
 ```
 
 a) Im ersten Schritt laden wir die zur Verfuegung stehenden Daten. Laden Sie die im Unterordner "Daten" bereitgestellten Datei `EU_Makro.csv` in R ein. Ergaenzen Sie hierfuer unten stehende Code-Zeile.
 
 ```{r "1_a"}
-____ <- read_csv("____")
-
-# enter your code here ...
+eu_makro <- read_csv("data/EU_Makro.csv")
 
 ```
 Hier waere ein guter Zeitpunkt das Addin 'Check Problemset' auszufuehren!

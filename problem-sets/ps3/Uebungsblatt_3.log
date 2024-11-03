@@ -1,0 +1,18 @@
+{"type":["init_ps"],"time":["2024-11-03 10:21:02"],"user":["Ilja Sukhanov"],"umph":[1730625662.2453],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2024-11-03 10:21:02"],"user":["Ilja Sukhanov"],"umph":[1730625662.2794],"ok":[true],"chunk":[1],"ex":[1],"e.ind":[0],"code":["library(tidyverse)\nlibrary(pander)\nlibrary(sf)\nlibrary(gganimate)\nlibrary(ggrepel)\nlibrary(skimr)\nlibrary(RColorBrewer)\nlibrary(gifski)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2024-11-03 10:21:02"],"user":["Ilja Sukhanov"],"umph":[1730625662.3167],"ok":[false],"chunk":[2],"ex":[1],"e.ind":[1],"code":["eu <- read_csv(\"data/EU_Makro.csv\")\n"],"message":["\nYou have not yet made an assignment to eu_makro in chunk 1_a."]}
+,
+{"type":["check_ps"],"time":["2024-11-03 10:21:40"],"user":["Ilja Sukhanov"],"umph":[1730625700.5096],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2024-11-03 10:21:40"],"user":["Ilja Sukhanov"],"umph":[1730625700.5535],"ok":[false],"chunk":[2],"ex":[1],"e.ind":[1],"code":["EU_Makro <- read_csv(\"data/EU_Makro.csv\")\n"],"message":["\nYou have not yet made an assignment to eu_makro in chunk 1_a."]}
+,
+{"type":["hint"],"time":["2024-11-03 10:21:47"],"user":["Ilja Sukhanov"],"umph":[1730625707.3386],"ok":[true],"chunk":[2],"ex":[1],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2024-11-03 10:22:07"],"user":["Ilja Sukhanov"],"umph":[1730625727.409],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2024-11-03 10:22:07"],"user":["Ilja Sukhanov"],"umph":[1730625727.4856],"ok":[true],"chunk":[2],"ex":[1],"e.ind":[0],"code":["eu_makro <- read_csv(\"data/EU_Makro.csv\")\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2024-11-03 10:22:07"],"user":["Ilja Sukhanov"],"umph":[1730625727.4889],"ok":[false],"chunk":[3],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to ueberblick in chunk 1_b."]}
+,
