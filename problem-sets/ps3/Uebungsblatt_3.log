@@ -366,3 +366,5 @@
 ,
 {"type":["check_chunk"],"time":["2024-11-03 12:47:16"],"user":["Ilja Sukhanov"],"umph":[1730634436.6434],"ok":[true],"chunk":[30],"ex":[4],"e.ind":[0],"code":["# Erstelle die Spalte debt_share in Prozent und gerundet\ndat <-  dat |>\n  mutate(debt_share = round(100*gov_debt / gdp))\n# Erstelle die Spalte label fuer die Beschriftung zur Verschuldung\n# in der Karte\ndat <-  dat |>\n  mutate(label = paste0(cntry,\" \", debt_share,\"%\"))\n\n# Erstelle schoene Farbpalette \n# mit RColorBrewer\ncolours = rev(brewer.pal(8,\"RdYlGn\"))\ndat |>\n  ggplot() +\n  geom_sf(aes(fill=debt_share, geometry=geometry)) +\n  geom_sf_text(aes(label=label, geometry=geometry), size=3)+\n  theme_void() + \n  scale_fill_gradientn(colours = colours, name = \"Schuldenquote\") +\n  theme(panel.grid.major = element_line(color = \"white\"))\n"],"message":[""]}
 ,
+{"type":["check_ps"],"time":["2025-04-25 10:52:12"],"user":["Ilja Sukhanov"],"umph":[1745571132.3379],"ok":[true]}
+,
