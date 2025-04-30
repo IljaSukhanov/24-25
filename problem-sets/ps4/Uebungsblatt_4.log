@@ -308,3 +308,5 @@
 ,
 {"type":["check_chunk"],"time":["2025-04-25 12:07:02"],"user":["Ilja Sukhanov"],"umph":[1745575622.038],"ok":[true],"chunk":[38],"ex":[4],"e.ind":[0],"code":["\n3\n"],"message":[""]}
 ,
+{"type":["check_ps"],"time":["2025-04-30 17:16:33"],"user":["Ilja Sukhanov"],"umph":[1746026193.78],"ok":[true]}
+,
