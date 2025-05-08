@@ -1,0 +1,294 @@
+{"type":["init_ps"],"time":["2025-05-08 11:24:47"],"user":["Ilja Sukhanov"],"umph":[1746696287.4988],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:24:47"],"user":["Ilja Sukhanov"],"umph":[1746696287.5187],"ok":[false],"chunk":[1],"ex":[1],"e.ind":[1],"code":["\n1\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_a."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:25:19"],"user":["Ilja Sukhanov"],"umph":[1746696319.6754],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:25:19"],"user":["Ilja Sukhanov"],"umph":[1746696319.6831],"ok":[false],"chunk":[1],"ex":[1],"e.ind":[1],"code":["\n1\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_a."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:25:34"],"user":["Ilja Sukhanov"],"umph":[1746696334.0724],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:25:34"],"user":["Ilja Sukhanov"],"umph":[1746696334.0798],"ok":[true],"chunk":[1],"ex":[1],"e.ind":[0],"code":["\n2\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:25:34"],"user":["Ilja Sukhanov"],"umph":[1746696334.0832],"ok":[false],"chunk":[2],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_b."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:27:44"],"user":["Ilja Sukhanov"],"umph":[1746696464.5539],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:27:44"],"user":["Ilja Sukhanov"],"umph":[1746696464.561],"ok":[false],"chunk":[2],"ex":[1],"e.ind":[1],"code":["\n1\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_b."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:27:58"],"user":["Ilja Sukhanov"],"umph":[1746696478.8855],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:27:58"],"user":["Ilja Sukhanov"],"umph":[1746696478.8923],"ok":[true],"chunk":[2],"ex":[1],"e.ind":[0],"code":["\n\"nein\"\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:28:00"],"user":["Ilja Sukhanov"],"umph":[1746696480.0918],"ok":[false],"chunk":[3],"ex":[1],"e.ind":[2],"code":["thp <- read_csv(\"./data/THP_clean.csv\") |>\n  select(newid, uc, depressed_1y, treat, age_baseline, age_baseline_sq, kids_no, famstruct_baseline, grandmother_baseline, edu_mo, edu_fa, employed_mo_baseline, incomeindex, depindex_0, mspss_tot)\n\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_c."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:30:51"],"user":["Ilja Sukhanov"],"umph":[1746696651.7805],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:30:52"],"user":["Ilja Sukhanov"],"umph":[1746696652.3431],"ok":[true],"chunk":[3],"ex":[1],"e.ind":[0],"code":["thp <- read_csv(\"./data/THP_clean.csv\") |>\n  select(newid, uc, depressed_1y, treat, age_baseline, age_baseline_sq, kids_no, famstruct_baseline, grandmother_baseline, edu_mo, edu_fa, employed_mo_baseline, incomeindex, depindex_0, mspss_tot)\n\nskim(thp)\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:30:52"],"user":["Ilja Sukhanov"],"umph":[1746696652.3488],"ok":[false],"chunk":[4],"ex":[1],"e.ind":[1],"code":["thp_plots <- thp |>\n  mutate(treat_factor = as.factor(ifelse(treat == 1 , \"Treatment\", \"Kontrolle\")),\n         depressed = as.factor(ifelse(depressed_1y == 0, \"keine Depressionen\", \"Depressionen\"))) |>\n  filter( !is.na(depressed)) \n#plot_prop_depression <- ggplot(___, aes(x = ___, fill = ___)) +\n#  geom_bar(position = \"fill\") +\n#  labs(x = NULL, y = \"Anteil an Depressionen\", fill = NULL) +\n#  scale_fill_manual(values = c(\"darkblue\", \"darkred\"))\n\n#plot_prop_depression\n\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to plot_prop_depression in chunk 1_d."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:35:27"],"user":["Ilja Sukhanov"],"umph":[1746696927.5285],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:35:27"],"user":["Ilja Sukhanov"],"umph":[1746696927.6314],"ok":[false],"chunk":[4],"ex":[1],"e.ind":[1],"code":["thp_plots <- thp |>\n  mutate(treat_factor = as.factor(ifelse(treat == 1 , \"Treatment\", \"Kontrolle\")),\n         depressed = as.factor(ifelse(depressed_1y == 0, \"keine Depressionen\", \"Depressionen\"))) |>\n  filter( !is.na(depressed)) \nplot_prop_depression <- ggplot(thp_plots, aes(x = treat_factor, fill = depressed)) +\n  geom_bar(position = \"fill\") +\n  labs(x = NULL, y = \"Anteil an Depressionen\", fill = NULL) +\n  scale_fill_manual(values = c(\"darkblue\", \"darkred\"))\n\nplot_prop_depression\n"],"message":["\nYou have not made a correct assignment to plot_prop_depression in chunk 1_d."]}
+,
+{"type":["hint"],"time":["2025-05-08 11:35:39"],"user":["Ilja Sukhanov"],"umph":[1746696939.9633],"ok":[true],"chunk":[4],"ex":[1],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:36:17"],"user":["Ilja Sukhanov"],"umph":[1746696977.976],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:36:18"],"user":["Ilja Sukhanov"],"umph":[1746696978.0361],"ok":[true],"chunk":[4],"ex":[1],"e.ind":[0],"code":["thp_plots <- thp |>\n  mutate(treat_factor = as.factor(ifelse(treat == 1 , \"Treatment\", \"Kontrolle\")),\n         depressed = as.factor(ifelse(depressed_1y == 0, \"keine Depressionen\", \"Depressionen\"))) |>\n  filter( !is.na(depressed)) \nplot_prop_depression <- ggplot(thp_plots, aes(x = depressed, fill = treat_factor)) +\n  geom_bar(position = \"fill\") +\n  labs(x = NULL, y = \"Anteil an Depressionen\", fill = NULL) +\n  scale_fill_manual(values = c(\"darkblue\", \"darkred\"))\n\nplot_prop_depression\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:36:18"],"user":["Ilja Sukhanov"],"umph":[1746696978.0461],"ok":[false],"chunk":[5],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_e."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:37:08"],"user":["Ilja Sukhanov"],"umph":[1746697028.5229],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:37:08"],"user":["Ilja Sukhanov"],"umph":[1746697028.5302],"ok":[true],"chunk":[5],"ex":[1],"e.ind":[0],"code":["\n\"ja\"\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:37:08"],"user":["Ilja Sukhanov"],"umph":[1746697028.5333],"ok":[false],"chunk":[6],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_f."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:37:55"],"user":["Ilja Sukhanov"],"umph":[1746697075.9684],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:37:55"],"user":["Ilja Sukhanov"],"umph":[1746697075.9761],"ok":[true],"chunk":[6],"ex":[1],"e.ind":[0],"code":["\n\"unterschätzen\"\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:37:56"],"user":["Ilja Sukhanov"],"umph":[1746697076.0317],"ok":[true],"chunk":[7],"ex":[1],"e.ind":[0],"code":["thp |>\n  pivot_longer(cols = -treat, names_to = \"variable\", values_to = \"value\") |>\n  group_nest(variable) |>\n  mutate(t.test = map(data, ~tidy(t.test(value ~ treat, data = .x)))) |>\n  unnest(t.test) |>\n  mutate( Mean_Treatment = round(estimate2, 2),\n          Mean_Kontrolle = round(estimate1, 2),\n          Differenz = round(estimate, 4),\n          Signifikanz = round(p.value,4)) |>\n  select(variable, Mean_Treatment, Mean_Kontrolle, Differenz, Signifikanz)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:37:56"],"user":["Ilja Sukhanov"],"umph":[1746697076.0348],"ok":[false],"chunk":[8],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_g."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:40:11"],"user":["Ilja Sukhanov"],"umph":[1746697211.9662],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:40:11"],"user":["Ilja Sukhanov"],"umph":[1746697211.9733],"ok":[true],"chunk":[8],"ex":[1],"e.ind":[0],"code":["\n3\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:40:11"],"user":["Ilja Sukhanov"],"umph":[1746697211.9831],"ok":[false],"chunk":[9],"ex":[1],"e.ind":[3],"code":["reg1 <- lm(depressed_1y ~ treat, data=thp)\nreg2 <- lm(depressed_1y ~ treat + depindex_0, data=thp)\n\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to reg3 in chunk 1_h."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:45:15"],"user":["Ilja Sukhanov"],"umph":[1746697515.1485],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:45:15"],"user":["Ilja Sukhanov"],"umph":[1746697515.1661],"ok":[true],"chunk":[9],"ex":[1],"e.ind":[0],"code":["reg1 <- lm(depressed_1y ~ treat, data=thp)\nreg2 <- lm(depressed_1y ~ treat + depindex_0, data=thp)\n\nreg3 <- lm(depressed_1y ~ treat + depindex_0 + age_baseline + age_baseline_sq + kids_no + famstruct_baseline + grandmother_baseline + edu_mo + edu_fa + employed_mo_baseline + incomeindex + mspss_tot, data = thp)\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:45:15"],"user":["Ilja Sukhanov"],"umph":[1746697515.7369],"ok":[true],"chunk":[10],"ex":[1],"e.ind":[0],"code":["stargazer( reg1, reg2, reg3 ,type = \"text\",  digits=2, omit.stat = c(\"f\",\"ser\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:45:15"],"user":["Ilja Sukhanov"],"umph":[1746697515.7402],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:46:51"],"user":["Ilja Sukhanov"],"umph":[1746697611.3236],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:46:51"],"user":["Ilja Sukhanov"],"umph":[1746697611.331],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(3)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:48:18"],"user":["Ilja Sukhanov"],"umph":[1746697698.8216],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:48:18"],"user":["Ilja Sukhanov"],"umph":[1746697698.8299],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(3,4)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["hint"],"time":["2025-05-08 11:48:23"],"user":["Ilja Sukhanov"],"umph":[1746697703.6222],"ok":[true],"chunk":[11],"ex":[1],"e.ind":[1]}
+,
+{"type":["hint"],"time":["2025-05-08 11:48:31"],"user":["Ilja Sukhanov"],"umph":[1746697711.0336],"ok":[true],"chunk":[11],"ex":[1],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:48:58"],"user":["Ilja Sukhanov"],"umph":[1746697738.1239],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:48:58"],"user":["Ilja Sukhanov"],"umph":[1746697738.1319],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(1)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:49:21"],"user":["Ilja Sukhanov"],"umph":[1746697761.954],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:49:21"],"user":["Ilja Sukhanov"],"umph":[1746697761.963],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(1,2)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:49:44"],"user":["Ilja Sukhanov"],"umph":[1746697784.089],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:49:44"],"user":["Ilja Sukhanov"],"umph":[1746697784.0962],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(1,2,3)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:49:49"],"user":["Ilja Sukhanov"],"umph":[1746697789.3606],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:49:49"],"user":["Ilja Sukhanov"],"umph":[1746697789.3681],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(1,2,3,4)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:49:53"],"user":["Ilja Sukhanov"],"umph":[1746697793.305],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:49:53"],"user":["Ilja Sukhanov"],"umph":[1746697793.3187],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(1,2,3,4)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:49:59"],"user":["Ilja Sukhanov"],"umph":[1746697799.2697],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:49:59"],"user":["Ilja Sukhanov"],"umph":[1746697799.2781],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(2,3,4)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:50:51"],"user":["Ilja Sukhanov"],"umph":[1746697851.5726],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:50:51"],"user":["Ilja Sukhanov"],"umph":[1746697851.5796],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(3)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:50:58"],"user":["Ilja Sukhanov"],"umph":[1746697858.7264],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:50:58"],"user":["Ilja Sukhanov"],"umph":[1746697858.7346],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(2,3)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:51:05"],"user":["Ilja Sukhanov"],"umph":[1746697865.0187],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:51:05"],"user":["Ilja Sukhanov"],"umph":[1746697865.0273],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(1,3)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:51:15"],"user":["Ilja Sukhanov"],"umph":[1746697875.1554],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:51:15"],"user":["Ilja Sukhanov"],"umph":[1746697875.1636],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(3,4)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:51:21"],"user":["Ilja Sukhanov"],"umph":[1746697881.9358],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:51:21"],"user":["Ilja Sukhanov"],"umph":[1746697881.9445],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(1,3,4)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["hint"],"time":["2025-05-08 11:52:12"],"user":["Ilja Sukhanov"],"umph":[1746697932.7676],"ok":[true],"chunk":[11],"ex":[1],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:52:24"],"user":["Ilja Sukhanov"],"umph":[1746697944.4232],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:52:24"],"user":["Ilja Sukhanov"],"umph":[1746697944.4311],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(1)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:52:29"],"user":["Ilja Sukhanov"],"umph":[1746697949.7899],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:52:29"],"user":["Ilja Sukhanov"],"umph":[1746697949.7971],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(2)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:52:37"],"user":["Ilja Sukhanov"],"umph":[1746697957.7328],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:52:37"],"user":["Ilja Sukhanov"],"umph":[1746697957.74],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(3)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:52:44"],"user":["Ilja Sukhanov"],"umph":[1746697964.0455],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:52:44"],"user":["Ilja Sukhanov"],"umph":[1746697964.0534],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(4)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:52:51"],"user":["Ilja Sukhanov"],"umph":[1746697971.9988],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:52:52"],"user":["Ilja Sukhanov"],"umph":[1746697972.0072],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(1,2)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:53:00"],"user":["Ilja Sukhanov"],"umph":[1746697980.4981],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:53:00"],"user":["Ilja Sukhanov"],"umph":[1746697980.5063],"ok":[false],"chunk":[11],"ex":[1],"e.ind":[1],"code":["\nc(1,3)\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_i_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:53:09"],"user":["Ilja Sukhanov"],"umph":[1746697989.3029],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:53:09"],"user":["Ilja Sukhanov"],"umph":[1746697989.3105],"ok":[true],"chunk":[11],"ex":[1],"e.ind":[0],"code":["\nc(1,4)\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:53:09"],"user":["Ilja Sukhanov"],"umph":[1746697989.3145],"ok":[false],"chunk":[12],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_j."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:54:32"],"user":["Ilja Sukhanov"],"umph":[1746698072.6355],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:54:32"],"user":["Ilja Sukhanov"],"umph":[1746698072.6435],"ok":[true],"chunk":[12],"ex":[1],"e.ind":[0],"code":["\n2\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:54:33"],"user":["Ilja Sukhanov"],"umph":[1746698073.6103],"ok":[true],"chunk":[13],"ex":[2],"e.ind":[0],"code":["library(AER)\ndata(Fertility)\nhead(Fertility)\nskim(Fertility)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:54:33"],"user":["Ilja Sukhanov"],"umph":[1746698073.6142],"ok":[false],"chunk":[14],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_a_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 11:57:29"],"user":["Ilja Sukhanov"],"umph":[1746698249.9882],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:57:29"],"user":["Ilja Sukhanov"],"umph":[1746698249.9955],"ok":[true],"chunk":[14],"ex":[2],"e.ind":[0],"code":["\n2\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 11:57:30"],"user":["Ilja Sukhanov"],"umph":[1746698250.0075],"ok":[false],"chunk":[15],"ex":[2],"e.ind":[1],"code":["Fertility <- Fertility |>\n  mutate(work01 = case_when(work > 0 ~ 1,\n                            work == 0 ~ 0))\n\n# enter your code here ...\n\n\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to reg1 in chunk 2_b."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 12:01:05"],"user":["Ilja Sukhanov"],"umph":[1746698465.5523],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:01:05"],"user":["Ilja Sukhanov"],"umph":[1746698465.8013],"ok":[true],"chunk":[15],"ex":[2],"e.ind":[0],"code":["Fertility <- Fertility |>\n  mutate(work01 = case_when(work > 0 ~ 1,\n                            work == 0 ~ 0))\n\nreg1 <- lm(work01 ~ morekids, data = Fertility)\n\n\nsummary(reg1)\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:01:05"],"user":["Ilja Sukhanov"],"umph":[1746698465.8049],"ok":[false],"chunk":[16],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_c."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 12:02:10"],"user":["Ilja Sukhanov"],"umph":[1746698530.2487],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:02:10"],"user":["Ilja Sukhanov"],"umph":[1746698530.2572],"ok":[true],"chunk":[16],"ex":[2],"e.ind":[0],"code":["\n2\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:02:10"],"user":["Ilja Sukhanov"],"umph":[1746698530.2802],"ok":[true],"chunk":[17],"ex":[2],"e.ind":[0],"code":["grViz('digraph G {\n\nx [label=\"erklärende Variable x\"]\ny [label=\"abhängige Variable y\"]\nz [label=\"Instrument z\"]\n\nx -> y [label=\"+\"];\nz -> x [label=\"+\"];\nz -> y [label=\"+\"];\n}')"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:02:10"],"user":["Ilja Sukhanov"],"umph":[1746698530.3149],"ok":[true],"chunk":[18],"ex":[2],"e.ind":[0],"code":["grViz('digraph G {\n\nx [label=\"erklärende Variable x\"]\ny [label=\"abhängige Variable y\"]\nz [label=\"Instrument z\"]\n\nx -> y [label=\"-\"];\nz -> y [label=\"+\"];\n}')"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:02:10"],"user":["Ilja Sukhanov"],"umph":[1746698530.3268],"ok":[true],"chunk":[19],"ex":[2],"e.ind":[0],"code":["grViz('digraph G {\n\nx [label=\"erklärende Variable x\"]\ny [label=\"abhängige Variable y\"]\nz [label=\"Instrument z\"]\n\nx -> y [label=\"-\"];\nz -> x [label=\"+\"];\n}')"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:02:10"],"user":["Ilja Sukhanov"],"umph":[1746698530.3333],"ok":[false],"chunk":[20],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_d_4."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 12:04:31"],"user":["Ilja Sukhanov"],"umph":[1746698671.7465],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:04:31"],"user":["Ilja Sukhanov"],"umph":[1746698671.7542],"ok":[true],"chunk":[20],"ex":[2],"e.ind":[0],"code":["\n3\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:04:32"],"user":["Ilja Sukhanov"],"umph":[1746698672.3026],"ok":[true],"chunk":[21],"ex":[2],"e.ind":[0],"code":["Fertility <- Fertility |>\n  mutate(morekids = ifelse(morekids== \"yes\", 1, 0)) |>\n  mutate(afam = ifelse(afam== \"yes\", 1, 0)) |>\n  mutate(same_sex = ifelse(gender1== gender2, 1, 0))\n  \n\nreg1 <- lm(morekids ~ gender2, data=Fertility)\n\nreg2 <- lm(morekids ~ afam, data=Fertility)\n\nreg3 <- lm(morekids ~ same_sex, data=Fertility)\n\n stargazer(reg1, reg2, reg3, type = \"text\", digits=3)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:04:32"],"user":["Ilja Sukhanov"],"umph":[1746698672.3058],"ok":[false],"chunk":[22],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_e_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 12:05:18"],"user":["Ilja Sukhanov"],"umph":[1746698718.4337],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:05:18"],"user":["Ilja Sukhanov"],"umph":[1746698718.4411],"ok":[false],"chunk":[22],"ex":[2],"e.ind":[1],"code":["\n2\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_e_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 12:06:19"],"user":["Ilja Sukhanov"],"umph":[1746698779.7473],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:06:19"],"user":["Ilja Sukhanov"],"umph":[1746698779.7544],"ok":[true],"chunk":[22],"ex":[2],"e.ind":[0],"code":["\n3\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:06:19"],"user":["Ilja Sukhanov"],"umph":[1746698779.9482],"ok":[true],"chunk":[23],"ex":[2],"e.ind":[0],"code":["\nivreg(work01 ~ morekids | same_sex, data = Fertility) |>\n  summary(diagnostics=TRUE)\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:06:20"],"user":["Ilja Sukhanov"],"umph":[1746698780.1961],"ok":[true],"chunk":[24],"ex":[2],"e.ind":[0],"code":["\nivreg(work01 ~ morekids | same_sex, data = Fertility) |> \n  summary()\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:06:20"],"user":["Ilja Sukhanov"],"umph":[1746698780.1993],"ok":[false],"chunk":[25],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_f_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 12:09:48"],"user":["Ilja Sukhanov"],"umph":[1746698988.2219],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:09:48"],"user":["Ilja Sukhanov"],"umph":[1746698988.2304],"ok":[false],"chunk":[25],"ex":[2],"e.ind":[1],"code":["\n5\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_f_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 12:09:54"],"user":["Ilja Sukhanov"],"umph":[1746698994.0381],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:09:54"],"user":["Ilja Sukhanov"],"umph":[1746698994.0453],"ok":[false],"chunk":[25],"ex":[2],"e.ind":[1],"code":["\n4\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_f_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 12:10:04"],"user":["Ilja Sukhanov"],"umph":[1746699004.5723],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:10:04"],"user":["Ilja Sukhanov"],"umph":[1746699004.5797],"ok":[false],"chunk":[25],"ex":[2],"e.ind":[1],"code":["\n3\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_f_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 12:10:16"],"user":["Ilja Sukhanov"],"umph":[1746699016.9933],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:10:17"],"user":["Ilja Sukhanov"],"umph":[1746699017.0009],"ok":[false],"chunk":[25],"ex":[2],"e.ind":[1],"code":["\n1\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_f_2."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 12:10:24"],"user":["Ilja Sukhanov"],"umph":[1746699024.0372],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:10:24"],"user":["Ilja Sukhanov"],"umph":[1746699024.0449],"ok":[true],"chunk":[25],"ex":[2],"e.ind":[0],"code":["\n2\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:10:24"],"user":["Ilja Sukhanov"],"umph":[1746699024.0499],"ok":[false],"chunk":[26],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 2_g."]}
+,
+{"type":["check_ps"],"time":["2025-05-08 12:10:57"],"user":["Ilja Sukhanov"],"umph":[1746699057.6723],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:10:57"],"user":["Ilja Sukhanov"],"umph":[1746699057.6793],"ok":[true],"chunk":[26],"ex":[2],"e.ind":[0],"code":["\nc(1,2,3)\n"],"message":[""]}
+,
+{"type":["grade_ps"],"time":["2025-05-08 12:11:07"],"user":["Ilja Sukhanov"],"umph":[1746699067.1533],"ok":[true]}
+,
+{"type":["init_ps"],"time":["2025-05-08 12:11:07"],"user":["Ilja Sukhanov"],"umph":[1746699067.17],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:07"],"user":["Ilja Sukhanov"],"umph":[1746699067.1809],"ok":[true],"chunk":[1],"ex":[1],"e.ind":[0],"code":["\n2\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:07"],"user":["Ilja Sukhanov"],"umph":[1746699067.1861],"ok":[true],"chunk":[2],"ex":[1],"e.ind":[0],"code":["\n\"nein\"\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:07"],"user":["Ilja Sukhanov"],"umph":[1746699067.7508],"ok":[true],"chunk":[3],"ex":[1],"e.ind":[0],"code":["thp <- read_csv(\"./data/THP_clean.csv\") |>\n  select(newid, uc, depressed_1y, treat, age_baseline, age_baseline_sq, kids_no, famstruct_baseline, grandmother_baseline, edu_mo, edu_fa, employed_mo_baseline, incomeindex, depindex_0, mspss_tot)\n\nskim(thp)\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:07"],"user":["Ilja Sukhanov"],"umph":[1746699067.8034],"ok":[true],"chunk":[4],"ex":[1],"e.ind":[0],"code":["thp_plots <- thp |>\n  mutate(treat_factor = as.factor(ifelse(treat == 1 , \"Treatment\", \"Kontrolle\")),\n         depressed = as.factor(ifelse(depressed_1y == 0, \"keine Depressionen\", \"Depressionen\"))) |>\n  filter( !is.na(depressed)) \nplot_prop_depression <- ggplot(thp_plots, aes(x = depressed, fill = treat_factor)) +\n  geom_bar(position = \"fill\") +\n  labs(x = NULL, y = \"Anteil an Depressionen\", fill = NULL) +\n  scale_fill_manual(values = c(\"darkblue\", \"darkred\"))\n\nplot_prop_depression\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:07"],"user":["Ilja Sukhanov"],"umph":[1746699067.8062],"ok":[true],"chunk":[5],"ex":[1],"e.ind":[0],"code":["\n\"ja\"\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:07"],"user":["Ilja Sukhanov"],"umph":[1746699067.8086],"ok":[true],"chunk":[6],"ex":[1],"e.ind":[0],"code":["\n\"unterschätzen\"\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:07"],"user":["Ilja Sukhanov"],"umph":[1746699067.8492],"ok":[true],"chunk":[7],"ex":[1],"e.ind":[0],"code":["thp |>\n  pivot_longer(cols = -treat, names_to = \"variable\", values_to = \"value\") |>\n  group_nest(variable) |>\n  mutate(t.test = map(data, ~tidy(t.test(value ~ treat, data = .x)))) |>\n  unnest(t.test) |>\n  mutate( Mean_Treatment = round(estimate2, 2),\n          Mean_Kontrolle = round(estimate1, 2),\n          Differenz = round(estimate, 4),\n          Signifikanz = round(p.value,4)) |>\n  select(variable, Mean_Treatment, Mean_Kontrolle, Differenz, Signifikanz)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:07"],"user":["Ilja Sukhanov"],"umph":[1746699067.852],"ok":[true],"chunk":[8],"ex":[1],"e.ind":[0],"code":["\n3\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:07"],"user":["Ilja Sukhanov"],"umph":[1746699067.8623],"ok":[true],"chunk":[9],"ex":[1],"e.ind":[0],"code":["reg1 <- lm(depressed_1y ~ treat, data=thp)\nreg2 <- lm(depressed_1y ~ treat + depindex_0, data=thp)\n\nreg3 <- lm(depressed_1y ~ treat + depindex_0 + age_baseline + age_baseline_sq + kids_no + famstruct_baseline + grandmother_baseline + edu_mo + edu_fa + employed_mo_baseline + incomeindex + mspss_tot, data = thp)\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:08"],"user":["Ilja Sukhanov"],"umph":[1746699068.1863],"ok":[true],"chunk":[10],"ex":[1],"e.ind":[0],"code":["stargazer( reg1, reg2, reg3 ,type = \"text\",  digits=2, omit.stat = c(\"f\",\"ser\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:08"],"user":["Ilja Sukhanov"],"umph":[1746699068.1895],"ok":[true],"chunk":[11],"ex":[1],"e.ind":[0],"code":["\nc(1,4)\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:08"],"user":["Ilja Sukhanov"],"umph":[1746699068.1919],"ok":[true],"chunk":[12],"ex":[1],"e.ind":[0],"code":["\n2\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:08"],"user":["Ilja Sukhanov"],"umph":[1746699068.9692],"ok":[true],"chunk":[13],"ex":[2],"e.ind":[0],"code":["library(AER)\ndata(Fertility)\nhead(Fertility)\nskim(Fertility)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:08"],"user":["Ilja Sukhanov"],"umph":[1746699068.9726],"ok":[true],"chunk":[14],"ex":[2],"e.ind":[0],"code":["\n2\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:09"],"user":["Ilja Sukhanov"],"umph":[1746699069.3688],"ok":[true],"chunk":[15],"ex":[2],"e.ind":[0],"code":["Fertility <- Fertility |>\n  mutate(work01 = case_when(work > 0 ~ 1,\n                            work == 0 ~ 0))\n\nreg1 <- lm(work01 ~ morekids, data = Fertility)\n\n\nsummary(reg1)\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:09"],"user":["Ilja Sukhanov"],"umph":[1746699069.372],"ok":[true],"chunk":[16],"ex":[2],"e.ind":[0],"code":["\n2\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:09"],"user":["Ilja Sukhanov"],"umph":[1746699069.3871],"ok":[true],"chunk":[17],"ex":[2],"e.ind":[0],"code":["grViz('digraph G {\n\nx [label=\"erklärende Variable x\"]\ny [label=\"abhängige Variable y\"]\nz [label=\"Instrument z\"]\n\nx -> y [label=\"+\"];\nz -> x [label=\"+\"];\nz -> y [label=\"+\"];\n}')"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:09"],"user":["Ilja Sukhanov"],"umph":[1746699069.3966],"ok":[true],"chunk":[18],"ex":[2],"e.ind":[0],"code":["grViz('digraph G {\n\nx [label=\"erklärende Variable x\"]\ny [label=\"abhängige Variable y\"]\nz [label=\"Instrument z\"]\n\nx -> y [label=\"-\"];\nz -> y [label=\"+\"];\n}')"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:09"],"user":["Ilja Sukhanov"],"umph":[1746699069.4073],"ok":[true],"chunk":[19],"ex":[2],"e.ind":[0],"code":["grViz('digraph G {\n\nx [label=\"erklärende Variable x\"]\ny [label=\"abhängige Variable y\"]\nz [label=\"Instrument z\"]\n\nx -> y [label=\"-\"];\nz -> x [label=\"+\"];\n}')"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:09"],"user":["Ilja Sukhanov"],"umph":[1746699069.4103],"ok":[true],"chunk":[20],"ex":[2],"e.ind":[0],"code":["\n3\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:09"],"user":["Ilja Sukhanov"],"umph":[1746699069.7872],"ok":[true],"chunk":[21],"ex":[2],"e.ind":[0],"code":["Fertility <- Fertility |>\n  mutate(morekids = ifelse(morekids== \"yes\", 1, 0)) |>\n  mutate(afam = ifelse(afam== \"yes\", 1, 0)) |>\n  mutate(same_sex = ifelse(gender1== gender2, 1, 0))\n  \n\nreg1 <- lm(morekids ~ gender2, data=Fertility)\n\nreg2 <- lm(morekids ~ afam, data=Fertility)\n\nreg3 <- lm(morekids ~ same_sex, data=Fertility)\n\n stargazer(reg1, reg2, reg3, type = \"text\", digits=3)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:09"],"user":["Ilja Sukhanov"],"umph":[1746699069.7933],"ok":[true],"chunk":[22],"ex":[2],"e.ind":[0],"code":["\n3\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:10"],"user":["Ilja Sukhanov"],"umph":[1746699070.1573],"ok":[true],"chunk":[23],"ex":[2],"e.ind":[0],"code":["\nivreg(work01 ~ morekids | same_sex, data = Fertility) |>\n  summary(diagnostics=TRUE)\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:10"],"user":["Ilja Sukhanov"],"umph":[1746699070.2575],"ok":[true],"chunk":[24],"ex":[2],"e.ind":[0],"code":["\nivreg(work01 ~ morekids | same_sex, data = Fertility) |> \n  summary()\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:10"],"user":["Ilja Sukhanov"],"umph":[1746699070.2603],"ok":[true],"chunk":[25],"ex":[2],"e.ind":[0],"code":["\n2\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-05-08 12:11:10"],"user":["Ilja Sukhanov"],"umph":[1746699070.2629],"ok":[true],"chunk":[26],"ex":[2],"e.ind":[0],"code":["\nc(1,2,3)\n"],"message":[""]}
+,
